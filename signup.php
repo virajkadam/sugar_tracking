@@ -2,7 +2,8 @@
 
 <html>
 <head>
-	<?php require('files/meta.html');?>
+
+<?php require('files/meta.html');?>
 	
 	<title>Sugar Tracking</title>
 
