@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 <head>
 	<?php require('files/meta.html');?>
@@ -39,13 +38,7 @@
 									<div class="card-body">
 										<form>
 											
-										<div class="mb-3">
-											<label class="form-label" for="user-id">User ID</label>
-											<div class="input-group input-group-merge">
-												<span id="user-id-icon" class="input-group-text"><i class="bx bx-id-card"></i></span>
-												<input type="number" class="form-control" id="user-id" placeholder="User ID" aria-label="User ID" aria-describedby="user-id-icon" />
-											</div>
-										</div>
+										
 
 											<div class="mb-3">
 												<label class="form-label" for="basic-icon-default-fullname">Full Name</label>
@@ -108,13 +101,7 @@
 													</div>
 											</div>
 
-											<div class="mb-3">
-												<label class="form-label" for="basic-icon-default-message">Message</label>
-												<div class="input-group input-group-merge">
-													<span id="basic-icon-default-message2" class="input-group-text" ><i class="bx bx-comment"></i ></span> 
-													<textarea id="basic-icon-default-message" class="form-control" placeholder="Is there anything specific you would like to discuss or any additional information you would like to share about your condition or medical history" aria-label="Hi, Do you have a moment to talk Joe?" aria-describedby="basic-icon-default-message2" ></textarea>
-												</div>
-											</div>
+											
 
 											<div class="text-end">
 												<button type="submit" class="btn btn-success">

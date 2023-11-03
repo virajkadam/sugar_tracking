@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html>
@@ -9,7 +8,9 @@
 
 	<?php require('files/css.html');?>
 </head>
+
 <body>
+
 
 		<div class="container-xxl">
 			<div class="authentication-wrapper authentication-basic container-p-y">
@@ -105,8 +106,6 @@
 
 
 
-
-	<?php require('files/js.html');?>
-
+		<?php require('files/js.html');?>
 	</body>
 </html>
