@@ -32,17 +32,10 @@
 						<p class="mb-4">Make your sugar </p>
 
 						<form id="formAuthentication" class="mb-3" action="index.html" method="POST">
-							<div class="mb-3">
-								<label class="form-label" for="user-id">User ID</label>
-								<div class="input-group input-group-merge">
-									<span id="user-id-icon" class="input-group-text"><i class="bx bx-id-card"></i></span>
-									<input type="number" class="form-control" id="user-id" placeholder="User ID" aria-label="User ID" aria-describedby="user-id-icon" />
-								</div>
-							</div>
 
 							<div class="mb-3">
-								<label for="username" class="form-label">Username</label>
-								<input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" autofocus
+								<label for="name" class="form-label">Name</label>
+								<input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" autofocus
 								/>
 							</div>
 
@@ -64,7 +57,7 @@
 							</div>
 
 							<div class="mb-3">
-								<label class="form-label" for="diabetesStatus">Do you have diabetes?</label>
+								<label class="form-label" for="diabetesStatus">Currently Diabetic?</label>
 								<select class="form-select" id="diabetesStatus" aria-label="Diabetes Status">
 									<option value="yes">Yes</option>
 									<option value="no">No</option>
@@ -73,12 +66,14 @@
 
 							<div class="mb-3">
 								<label for="email" class="form-label">Email</label>
-								<input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" />
+								<input type="text" class="form-control" id="email" name="email" placeholder="Enter Email">
 							</div>
+
 							<div class="mb-3">
-								<label for="number" class="form-label">phone</label>
-								<input type="number" class="form-control" id="number" name="number" placeholder="Enter your Phone No" />
+								<label for="mobile" class="form-label">Mobile</label>
+								<input type="number" class="form-control" id="mobile" name="mobile" placeholder="Enter Mobile">
 							</div>
+
 							<div class="mb-3 form-password-toggle">
 								<label class="form-label" for="password">Password</label>
 								<div class="input-group input-group-merge">
@@ -88,7 +83,7 @@
 							</div>
 
 
-							<button class="btn btn-primary d-grid w-100">Sign up</button>
+							<button class="btn btn-primary d-grid w-100">Signup</button>
 						</form>
 
 						<p class="text-center">

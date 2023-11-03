@@ -3,16 +3,15 @@ $localhost_url = "http://$_SERVER[HTTP_HOST]";
 
 ?>
 
-
 <!DOCTYPE html>
 
 <html>
 <head>
-	<?php require('files/meta.html');?>
+	<?php require('../files/meta.html');?>
 	
 	<title>Sugar Tracking</title>
 
-	<?php require('files/css.html');?>
+	<?php require('../files/css.html');?>
 </head>
 
 <body>
@@ -21,13 +20,13 @@ $localhost_url = "http://$_SERVER[HTTP_HOST]";
 	<div class="layout-wrapper layout-content-navbar">
 		<div class="layout-container">
 
-			<?php require('files/sidebar.html');?>
+			<?php require('../files/sidebar.html');?>
 
 
 			<div class="layout-page">
 
 				
-			<?php require('files/nav.html');?>
+			<?php require('../files/nav.html');?>
 
 
 			<div class="content-wrapper">
@@ -88,7 +87,7 @@ $localhost_url = "http://$_SERVER[HTTP_HOST]";
 
 
 
-			<?php require('files/footer.html');?>
+			<?php require('../files/footer.html');?>
 			
 
 			<div class="content-backdrop fade"></div>
@@ -103,7 +102,7 @@ $localhost_url = "http://$_SERVER[HTTP_HOST]";
 </div>
 
 
-<?php require('files/js.html');?>
+<?php require('../files/js.html');?>
 
 
 <script type="text/javascript">
