@@ -30,7 +30,7 @@
 									<i class="bx bxs-left-arrow-circle"></i> Back
 								</a>
 
-								<h5 class="mb-0 text-primary">Enter Sugar Data</h5>
+								<h5 class="mb-0 text-primary">Enter Appointment Data</h5>
 							</div>
 
 							<div class="card-body">
@@ -39,39 +39,32 @@
 
 									<div class="row">
 
-										<div class="col-lg-3 col-md-3 mb-3">
-											<label class="form-label" for="sugar-check-time">Sugar Check Time::</label>
+										<div class="col-lg-3 col-md-3 mb-3">	
+											<label class="form-label">Appointment Date:</label>
 											<div class="input-group input-group-merge">
-												<span id="sugar-check-time-icon" class="input-group-text"><i class="bx bx-time"></i></span>
-												<select class="form-select" id="sugar-check-time" aria-label="Sugar Check Time" aria-describedby="sugar-check-time-icon">
-													<option value="before_meal">Before Meal</option>
-													<option value="after_meal">After Meal</option>
-												</select>
+												<span class="input-group-text"><i class="bx bx-calendar"></i></span>
+												<input type="date" class="form-control" name="appointment_date" placeholder="Appointment Date">
 											</div>
-										</div>
-
-										<div class="col-lg-3 col-md-3 mb-3">
-											<label class="form-label" for="sugar-value">Sugar Level:</label>
-											<div class="input-group input-group-merge">
-												<span id="sugar-value-icon" class="input-group-text"><i class="bx bx-cube"></i></span>
-												<input type="number" class="form-control" name="sugar_level" min="10" max="600" placeholder="Enter Sugar Level">
-											</div>
-										</div>
-
-										<div class="col-lg-3 col-md-3 mb-3">
-											<label class="form-label" for="weight">Weight:</label>
-											<div class="input-group input-group-merge">
-												<span id="weight-icon" class="input-group-text"><i class="bx bx-calculator"></i></span>
-												<input type="number" class="form-control" id="weight" placeholder="Enter Weight">
-											</div>
-											<small class="text-muted">Weight in KG</small>
 										</div>
 
 										<div class="col-lg-3 col-md-3 mb-3">	
-											<label class="form-label" for="sugar-check-date">Sugar Check Date:</label>
+											<label class="form-label" for="sugar-check-date">Note:</label>
 											<div class="input-group input-group-merge">
-												<span id="sugar-check-date-icon" class="input-group-text"><i class="bx bx-calendar"></i></span>
-												<input type="date" class="form-control" id="sugar-check-date" placeholder="Select Date">
+												<span class="input-group-text"><i class="bx bx-calendar"></i></span>
+												<input type="text" class="form-control" name="track_note" placeholder="Enter Note">
+											</div>
+										</div>
+
+									</div>
+
+
+									<div class="row">
+
+										<div class="col-lg-11 col-md-11 mb-11">	
+											<label class="form-label" for="sugar-check-date">Purpose:</label>
+											<div class="input-group input-group-merge">
+												<span class="input-group-text"><i class="bx bx-calendar"></i></span>
+												<textarea class="form-control" rows="5" name="purpose" placeholder="Purpose"></textarea>
 											</div>
 										</div>
 

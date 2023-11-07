@@ -20,7 +20,7 @@ $localhost_url = "http://$_SERVER[HTTP_HOST]";
 	<div class="layout-wrapper layout-content-navbar">
 		<div class="layout-container">
 
-			<?php require('../files/sidebar.html');?>
+			<?php require('../files/sidebar_doctor.html');?>
 
 
 			<div class="layout-page">

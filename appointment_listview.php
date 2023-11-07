@@ -30,37 +30,37 @@
 									<i class="bx bxs-left-arrow-circle"></i> Back
 								</a>
 
-								<a style="float:right" href="tracking_create.php" class="btn rounded-pill btn-success mb-3">
-									<i class="bx bx-plus-circle"></i> &nbsp; Create Tracking
+								<a style="float:right" href="appointment_create.php" class="btn rounded-pill btn-success mb-3">
+									<i class="bx bx-plus-circle"></i> &nbsp; Create Appointment
 								</a>
 							</div>
 
 							<div class="card-body">
 
 								<div class="table-responsive text-nowrap">
-									<table class="table listview_table text-center">
+									<table class="table text-center data_table">
 										<thead>
 											<tr>
-												<th>Emp No.</th>
-												<th>Name</th>
-												<th>Mobile</th>
-												<th>Email</th>
-												<th>Department</th>
-												<th>Super Admin</th>
-												<th>Account Status</th>
+												<th>Patient Number</th>
+												<th>DateTime</th>
+												<th>Purpose</th>
+												<th>Note</th>
+												<th>Status</th>
+												<th>Actions</th>
 											</tr>
 										</thead>
 										<tbody class="table-border-bottom-0">
 											<tr>
 												<td>011</td>
-												<td>Viraj Kadam</td>
-												<td>8806431723</td>
-												<td>hivirajkadam@gmail.com</td>
-												<td>Safety</td>
+												<td>06:20 AM <br>1st Nov 2023</td>
+												<td>This is fine value</td>
+												<td>This is fine value</td>
+												<td>Postponed</td>
 												<td>
-													<span class="badge bg-label-info"> <i class="bx bx-user-circle"></i> Super Admin</span>
+													<a href="" class="btn btn-xs btn-danger">
+														<i class="bx bx-trash bx-sm"></i>
+													</a>
 												</td>
-												<td><span class="badge bg-label-success"> Active </span></td>
 											</tr>
 										</tbody>
 									</table>
