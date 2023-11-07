@@ -21,15 +21,12 @@
 
 						<div class="app-brand justify-content-center">
 							<a href="index.html" class="app-brand-link gap-2">
-								<span class="app-brand-logo demo">
-
-								</span>
-								<span class="app-brand-text demo text-body fw-bolder">SUGAR TRACKING</span>
+								<h3 class="fw-bolder">SUGAR TRACKING</h3>
 							</a>
 						</div>
 
-						<h4 class="mb-2">Adventure starts here 🚀</h4>
-						<p class="mb-4">Make your sugar </p>
+						<h4 class="mb-2 text-center">Adventure starts here 🚀</h4>
+						<p class="mb-4 text-center">Track your sugar</p>
 
 						<form id="formAuthentication" class="mb-3" action="index.html" method="POST">
 

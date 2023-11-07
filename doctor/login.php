@@ -7,6 +7,16 @@
 	<title>Sugar Tracking</title>
 
 	<?php require('../files/css.html');?>
+
+	<style type="text/css">
+		body { 
+			background: url("https://images.unsplash.com/photo-1423666639041-f56000c27a9a") no-repeat center center fixed; 
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+	</style>
 </head>
 
 <body>

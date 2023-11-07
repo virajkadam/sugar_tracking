@@ -83,24 +83,19 @@
 												<p class="text-muted mb-0">DateTime</p>
 											</div>
 
-											<div class="col-lg-5 col-md-5 mb-3">
+											<div class="col-lg-10 col-md-10 mb-3">
 												<h5 class="mb-2">Viraj Kadam</h5>
 												<p class="text-muted mb-0">Purpose</p>
 											</div>
 
-											<div class="col-lg-5 col-md-5 mb-3">
-												<h5 class="mb-2">Hello world</h5>
-												<p class="text-muted mb-0">Note</p>
-											</div>
+											<div class="mt-4">
+												<a href="" class="btn btn-success" style="float:right;">
+													<i class='bx bxs-check-circle bx-sm'></i> Accept
+												</a>
 
-											<div class="col-lg-5 col-md-5 mb-3">
-											<button type="submit" class="btn btn-success">
-															<i class='bx bxs-paper-plane'></i>	Accept
-											</button>
-
-											<button type="submit" class="btn btn-success">
-															<i class='bx bxs-paper-plane'></i>	Postpone
-											</button>
+												<a href="" class="btn btn-secondary" style="float:left;">
+													<i class='bx bxs-timer bx-sm'></i> Postpone
+												</a>
 											</div>
 
 
@@ -108,6 +103,19 @@
 									</div>
 
 								</div>
+							</div>
+						</div>
+
+
+
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-6 mb-4">
+
+								<div class="card">
+									<h4 class="card-title text-center my-3">User Daily Sugar Levels</h4>
+									<div class="card-body" id="chart"></div>
+								</div>
+
 							</div>
 						</div>
 
@@ -151,16 +159,14 @@
 																<td>Machine</td>
 																<td>This is fine value</td>
 																<td>
-																	<a href="" class="btn btn-xs btn-danger">
-																		<i class="bx bx-trash bx-sm"></i>
+																	<a href="" class="btn btn-icon btn-sm btn-danger" data-bs-toggle="tooltip" title="Remove Record">
+																		<i class="bx bx-trash"></i>
 																	</a>
 																</td>
 															</tr>
 														</tbody>
 													</table>
 												</div>
-
-
 											</div>
 
 											<div class="col-lg-3 col-md-3 col-sm-3 p-4">
@@ -169,7 +175,7 @@
 
 												<div class="row">
 
-													<div class="col-lg-12 col-md-12 col-sm-12 mb-2">
+													<div class="col-lg-12 col-md-12 col-sm-12 mb-3">
 														<label class="form-label">Medicine Name:</label>
 														<div class="input-group input-group-merge">
 															<span class="input-group-text"><i class="bx bx-cube"></i></span>
@@ -178,7 +184,7 @@
 													</div>
 
 
-													<div class="col-lg-12 col-md-12 col-sm-12 mb-2">
+													<div class="col-lg-12 col-md-12 col-sm-12 mb-3">
 														<label class="form-label">Category:</label>
 														<div class="input-group input-group-merge">
 															<span class="input-group-text">
@@ -203,7 +209,7 @@
 													</div>
 
 
-													<div class="col-lg-12 col-md-12 col-sm-12 mb-2">
+													<div class="col-lg-12 col-md-12 col-sm-12 mb-3">
 														<label class="form-label">Quantity:</label>
 														<div class="input-group input-group-merge">
 															<span class="input-group-text">
@@ -214,7 +220,7 @@
 													</div>
 
 
-													<div class="col-lg-12 col-md-12 col-sm-12 mb-2">
+													<div class="col-lg-12 col-md-12 col-sm-12 mb-3">
 														<label class="form-label">Consume Time:</label>
 														<div class="input-group input-group-merge">
 															<span class="input-group-text">
@@ -229,7 +235,7 @@
 
 													<div class="mt-4 d-flex justify-content-center">
 														<button type="submit" class="btn btn-success">
-															<i class='bx bxs-paper-plane'></i>	Save Data
+															<i class='bx bxs-plus-circle bx-sm'></i> Create
 														</button>
 													</div>
 
@@ -265,6 +271,82 @@
 
 
 	<?php require('../files/js.html');?>
+
+
+<script type="text/javascript">
+	
+	var options = {
+		series: [{
+			name: 'Network',
+			data: [{
+				x: 'Dec 23 2017',
+				y: null
+			},
+			{
+				x: 'Dec 24 2017',
+				y: 44
+			}
+			],
+		}],
+		chart: {
+			type: 'area',
+			height: 300,
+			animations: {
+				enabled: false
+			},
+			zoom: {
+				enabled: false
+			},
+		},
+		dataLabels: {
+			enabled: false
+		},
+		stroke: {
+			curve: 'straight'
+		},
+		fill: {
+			opacity: 0.8,
+			type: 'pattern',
+			pattern: {
+				style: ['verticalLines', 'horizontalLines'],
+				width: 5,
+				height: 6
+			},
+		},
+		markers: {
+			size: 5,
+			hover: {
+				size: 9
+			}
+		},
+		title: {
+			text: 'Daily Sugar Level of Viraj Kadam',
+		},
+		tooltip: {
+			intersect: true,
+			shared: false
+		},
+		theme: {
+			palette: 'palette1'
+		},
+		xaxis: {
+			title: {
+				text: 'Date'
+			},
+			type: 'datetime',
+		},
+		yaxis: {
+			title: {
+				text: 'Sugar Level'
+			}
+		}
+	};
+
+	var chart = new ApexCharts(document.querySelector("#chart"), options);
+	chart.render();
+
+</script>
+
 
 </body>
 </html>
