@@ -2,11 +2,21 @@
 
 <html>
 <head>
-	<?php require('files/meta.html');?>
+	<?php require('../files/meta.html');?>
 	
 	<title>Sugar Tracking</title>
 
-	<?php require('files/css.html');?>
+	<?php require('../files/css.html');?>
+
+	<style type="text/css">
+		body { 
+			background: url("https://images.unsplash.com/photo-1423666639041-f56000c27a9a") no-repeat center center fixed; 
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+	</style>
 </head>
 
 <body>
@@ -20,16 +30,12 @@
 					<div class="card-body">
 
 						<div class="app-brand justify-content-center">
-							<a href="index.html" class="app-brand-link gap-2">
-								<span class="app-brand-logo demo">
-
-								</span>
-								<span class="app-brand-text demo text-body fw-bolder">SUGAR TRACKING</span>
+							<a href="index.html" class="app-brand-link">
+								<h3 class="app-brand-text text-body fw-bolder">SUGAR TRACKING</h3>
 							</a>
 						</div>
 
-						<h4 class="mb-2">Welcome to Sugar Tracking! 👋</h4>
-						<p class="mb-4">Please sign-in to your account and start the adventure</p>
+						<h4 class="mb-4 text-center">ADMIN LOGIN</h4>
 
 						<form id="formAuthentication" class="mb-3" action="" method="POST">
 
@@ -53,12 +59,6 @@
 							</div>
 						</form>
 
-						<p class="text-center">
-							<span>New on our platform?</span>
-							<a href="signup.php">
-								<span>Create new account here</span>
-							</a>
-						</p>
 					</div>
 				</div>
 
@@ -66,7 +66,7 @@
 		</div>
 	</div>
 
-	<?php require('files/js.html');?>
+	<?php require('../files/js.html');?>
 
 </body>
 </html>

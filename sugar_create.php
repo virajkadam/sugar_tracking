@@ -40,38 +40,37 @@
 									<div class="row">
 
 										<div class="col-lg-3 col-md-3 mb-3">
-											<label class="form-label" for="sugar-check-time">Check Meal Type:</label>
+											<label class="form-label">Meal Period:</label>
 											<div class="input-group input-group-merge">
 												<span class="input-group-text">
 													<i class="bx bx-time"></i>
 												</span>
-												<select class="form-select" name="check-meal-type">
+												<select class="form-select" name="meal_period">
+													<option value="fasting">Fasting</option>
 													<option value="before_meal">Before Meal</option>
 													<option value="after_meal">After Meal</option>
+													<option value="bedtime">Bedtime</option>
 												</select>
 											</div>
 										</div>
 
+										<div class="col-lg-3 col-md-3 mb-3">
+											<label class="form-label" for="sugar-value">Sugar Level:</label>
+											<div class="input-group input-group-merge">
+												<span class="input-group-text"><i class="bx bx-cube"></i></span>
+												<input type="number" class="form-control" name="sugar_level" min="10" max="600" placeholder="Sugar Level">
+											</div>
+										</div>
 
 										<div class="col-lg-3 col-md-3 mb-3">
-											<label class="form-label" for="sugar-check-time">Sugar Check Time:</label>
+											<label class="form-label">Check Time:</label>
 											<div class="input-group input-group-merge">
 												<span class="input-group-text">
 													<i class="bx bx-time"></i>
 												</span>
-												<input type="time" class="form-control" name="sugar_check_time" min="10" max="600" placeholder="Sugar Check Time">
+												<input type="time" class="form-control" name="check_time" min="10" max="600" placeholder="Check Time">
 											</div>
 										</div>
-
-
-										<div class="col-lg-3 col-md-3 mb-3">
-											<label class="form-label" for="sugar-value">Sugar Level:</label>
-											<div class="input-group input-group-merge">
-												<span id="sugar-value-icon" class="input-group-text"><i class="bx bx-cube"></i></span>
-												<input type="number" class="form-control" name="sugar_level" min="10" max="600" placeholder="Enter Sugar Level">
-											</div>
-										</div>
-
 
 										<div class="col-lg-3 col-md-3 mb-3">
 											<label class="form-label" for="weight">Current Weight:</label>
@@ -84,10 +83,31 @@
 
 
 										<div class="col-lg-3 col-md-3 mb-3">	
-											<label class="form-label" for="sugar-check-date">Sugar Check Date:</label>
+											<label class="form-label" for="sugar-check-date">Track Date:</label>
 											<div class="input-group input-group-merge">
-												<span id="sugar-check-date-icon" class="input-group-text"><i class="bx bx-calendar"></i></span>
-												<input type="date" class="form-control" id="sugar-check-date" placeholder="Select Date">
+												<span class="input-group-text"><i class="bx bx-calendar"></i></span>
+												<input type="date" class="form-control" name="track_date" placeholder="Select Date">
+											</div>
+										</div>
+
+										<div class="col-lg-3 col-md-3 mb-3">
+											<label class="form-label">Track Source:</label>
+											<div class="input-group input-group-merge">
+												<span class="input-group-text">
+													<i class="bx bx-time"></i>
+												</span>
+												<select class="form-select" name="track_source">
+													<option value="machine">Machine</option>
+													<option value="lab">Lab</option>
+												</select>
+											</div>
+										</div>
+
+										<div class="col-lg-3 col-md-3 mb-3">	
+											<label class="form-label" for="sugar-check-date">Note:</label>
+											<div class="input-group input-group-merge">
+												<span class="input-group-text"><i class="bx bx-calendar"></i></span>
+												<input type="text" class="form-control" name="track_note" placeholder="Enter Note">
 											</div>
 										</div>
 

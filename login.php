@@ -7,6 +7,16 @@
 	<title>Sugar Tracking</title>
 
 	<?php require('files/css.html');?>
+
+	<style type="text/css">
+		body { 
+			background: url("https://images.unsplash.com/photo-1423666639041-f56000c27a9a") no-repeat center center fixed; 
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+	</style>
 </head>
 
 <body>
@@ -21,15 +31,12 @@
 
 						<div class="app-brand justify-content-center">
 							<a href="index.html" class="app-brand-link gap-2">
-								<span class="app-brand-logo demo">
-
-								</span>
-								<span class="app-brand-text demo text-body fw-bolder">SUGAR TRACKING</span>
+								<h3 class="app-brand-text fw-bolder">SUGAR TRACKING</h3>
 							</a>
 						</div>
 
-						<h4 class="mb-2">Welcome to Sugar Tracking! 👋</h4>
-						<p class="mb-4">Please sign-in to your account and start the adventure</p>
+						<h4 class="mb-2 text-center">Welcome to Sugar Tracking! 👋</h4>
+						<p class="mb-4 text-center">Please sign-in to your account and start the adventure</p>
 
 						<form id="formAuthentication" class="mb-3" action="" method="POST">
 
