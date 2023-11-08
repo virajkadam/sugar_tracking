@@ -41,7 +41,7 @@ $localhost_url = "http://$_SERVER[HTTP_HOST]";
 										<div class="card-body">
 											<h5 class="card-title text-primary">Welcome Viraj! 🎉</h5>
 											<p class="mb-4">Track your sugar today. Stay healthy.</p>
-											<a href="track_sugar.php" class="btn btn-sm btn-outline-primary">Track Sugar</a>
+											<a href="tracking_create.php" class="btn btn-sm btn-outline-primary">Track Sugar</a>
 										</div>
 									</div>
 									<div class="col-sm-5 text-center text-sm-left">

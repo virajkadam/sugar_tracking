@@ -40,15 +40,29 @@
 									<div class="row">
 
 										<div class="col-lg-3 col-md-3 mb-3">
-											<label class="form-label" for="sugar-check-time">Sugar Check Time::</label>
+											<label class="form-label" for="sugar-check-time">Check Meal Type:</label>
 											<div class="input-group input-group-merge">
-												<span id="sugar-check-time-icon" class="input-group-text"><i class="bx bx-time"></i></span>
-												<select class="form-select" id="sugar-check-time" aria-label="Sugar Check Time" aria-describedby="sugar-check-time-icon">
+												<span class="input-group-text">
+													<i class="bx bx-time"></i>
+												</span>
+												<select class="form-select" name="check-meal-type">
 													<option value="before_meal">Before Meal</option>
 													<option value="after_meal">After Meal</option>
 												</select>
 											</div>
 										</div>
+
+
+										<div class="col-lg-3 col-md-3 mb-3">
+											<label class="form-label" for="sugar-check-time">Sugar Check Time:</label>
+											<div class="input-group input-group-merge">
+												<span class="input-group-text">
+													<i class="bx bx-time"></i>
+												</span>
+												<input type="time" class="form-control" name="sugar_check_time" min="10" max="600" placeholder="Sugar Check Time">
+											</div>
+										</div>
+
 
 										<div class="col-lg-3 col-md-3 mb-3">
 											<label class="form-label" for="sugar-value">Sugar Level:</label>
@@ -58,14 +72,16 @@
 											</div>
 										</div>
 
+
 										<div class="col-lg-3 col-md-3 mb-3">
-											<label class="form-label" for="weight">Weight:</label>
+											<label class="form-label" for="weight">Current Weight:</label>
 											<div class="input-group input-group-merge">
 												<span id="weight-icon" class="input-group-text"><i class="bx bx-calculator"></i></span>
 												<input type="number" class="form-control" id="weight" placeholder="Enter Weight">
 											</div>
 											<small class="text-muted">Weight in KG</small>
 										</div>
+
 
 										<div class="col-lg-3 col-md-3 mb-3">	
 											<label class="form-label" for="sugar-check-date">Sugar Check Date:</label>

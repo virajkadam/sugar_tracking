@@ -40,41 +40,41 @@
 									<div class="row">
 
 										<div class="col-lg-3 col-md-3 mb-3">
-											<label for="firstName" class="form-label">First Name</label>
-											<input class="form-control" type="text" id="firstName" name="firstName" value="John" autofocus="">
+											<label class="form-label">Name</label>
+											<input class="form-control" type="text" name="name" value="John" autofocus>
 										</div>
 
 										<div class="col-lg-3 col-md-3 mb-3">
-											<label for="lastName" class="form-label">Last Name</label>
-											<input class="form-control" type="text" name="lastName" id="lastName" value="Doe">
+											<label class="form-label">Mobile</label>
+											<input class="form-control" type="text" name="mobile" value="8806431723">
 										</div>
 
 										<div class="col-lg-3 col-md-3 mb-3">
-											<label for="email" class="form-label">E-mail</label>
-											<input class="form-control" type="text" id="email" name="email" value="john.doe@example.com" placeholder="john.doe@example.com">
+											<label class="form-label">Password</label>
+											<input class="form-control" type="password" name="password" value="1234">
 										</div>
 
 										<div class="col-lg-3 col-md-3 mb-3">
-											<label for="organization" class="form-label">Organization</label>
-											<input type="text" class="form-control" id="organization" name="organization" value="ThemeSelection">
+											<label class="form-label">DOB</label>
+											<input class="form-control" type="text" name="dob" value="3 Jul 1992">
 										</div>
 
 										<div class="col-lg-3 col-md-3 mb-3">
-											<label class="form-label" for="phoneNumber">Phone Number</label>
-											<div class="input-group input-group-merge">
-												<span class="input-group-text">US (+1)</span>
-												<input type="text" id="phoneNumber" name="phoneNumber" class="form-control" placeholder="202 555 0111">
-											</div>
+											<label class="form-label">Gender</label>
+											<select class="form-select" name="gender">
+												<option value="Male">Male</option>
+												<option value="Female">Female</option>
+												<option value="Other">other</option>
+											</select>
 										</div>
 
 										<div class="col-lg-3 col-md-3 mb-3">
-											<label for="address" class="form-label">Address</label>
-											<input type="text" class="form-control" id="address" name="address" placeholder="Address">
-										</div>
-
-										<div class="col-lg-3 col-md-3 mb-3">
-											<label for="state" class="form-label">State</label>
-											<input class="form-control" type="text" id="state" name="state" placeholder="California">
+											<label class="form-label">Diabetes Status</label>
+											<select class="form-select" name="check-meal-type">
+												<option value="fully_diabetic">Fully Diabetic</option>
+												<option value="high_sugar">High Sugar</option>
+												<option value="non_diabetic">Non Diabetic</option>
+											</select>
 										</div>
 
 
