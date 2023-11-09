@@ -1,3 +1,57 @@
+<?php 
+session_start(); 
+require("files/config.php");
+
+if (isset($_POST['mobile']) && isset($_POST['password'])) {
+
+	function validate($data){
+		return htmlspecialchars(stripslashes(trim($data)));
+	}
+
+	$mobile = validate($_POST['mobile']);
+	$pass = validate($_POST['password']);
+
+	if (empty($mobile)) {
+		header("Location: login.php?error=Please enter Mobile Number");
+		exit();
+
+	}else if(empty($pass)){
+		header("Location: login.php?error=Please enter Password");
+		exit();
+
+	}else{
+
+		$sql = "SELECT * FROM users WHERE mobile='$mobile' AND password='$pass'";
+		$result = mysqli_query($conn, $sql);
+
+		if (mysqli_num_rows($result) === 1) {
+
+			$row = mysqli_fetch_assoc($result);
+
+			if ($row['mobile'] === $mobile && $row['password'] === $pass) {
+
+				$_SESSION['mobile'] = $row['mobile'];
+				$_SESSION['name'] = $row['name'];
+				$_SESSION['role'] = 'patient';
+				$_SESSION['doctor_id'] = $row['user_id'];
+
+				header("Location: home.php");
+				exit();
+
+			}else{
+				header("Location: login.php?error=Incorect Mobile or Password");
+				exit();
+			}
+
+		}else{
+			header("Location: login.php?error=Incorect Mobile or Password");
+			exit();
+		}
+	}
+
+}
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -38,7 +92,7 @@
 						<h4 class="mb-2 text-center">Welcome to Sugar Tracking! 👋</h4>
 						<p class="mb-4 text-center">Please sign-in to your account and start the adventure</p>
 
-						<form id="formAuthentication" class="mb-3" action="" method="POST">
+						<form id="formAuthentication" class="mb-3" action="login.php" method="POST">
 
 							<div class="mb-3">
 								<label for="mobile" class="form-label">Mobile:</label>
@@ -54,6 +108,10 @@
 									<span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
 								</div>
 							</div>
+
+							<?php if (isset($_GET['error'])) { ?>
+								<span class="mt-4 text-danger"><?php echo $_GET['error']; ?></span>
+			       			<?php } ?>
 
 							<div class="my-4">
 								<button class="btn btn-primary d-grid w-100" type="submit">Login</button>

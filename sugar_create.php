@@ -18,7 +18,7 @@
 
 			<div class="layout-page">
 				
-				<?php require('files/nav.html');?>
+				<?php require('files/nav.php');?>
 
 				<div class="content-wrapper">
 

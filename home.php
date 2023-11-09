@@ -1,9 +1,3 @@
-<?php
-$localhost_url = "http://$_SERVER[HTTP_HOST]";
-
-?>
-
-
 <!DOCTYPE html>
 
 <html>
@@ -27,7 +21,7 @@ $localhost_url = "http://$_SERVER[HTTP_HOST]";
 			<div class="layout-page">
 
 				
-				<?php require('files/nav.html');?>
+				<?php require('files/nav.php');?>
 
 
 				<div class="content-wrapper">
@@ -39,7 +33,7 @@ $localhost_url = "http://$_SERVER[HTTP_HOST]";
 									<div class="d-flex align-items-end row">
 										<div class="col-sm-7">
 											<div class="card-body">
-												<h5 class="card-title text-primary">Welcome Viraj! 🎉</h5>
+												<h5 class="card-title text-primary">Welcome <?php echo $name; ?>! 🎉</h5>
 												<p class="mb-4">Track your sugar today. Stay healthy.</p>
 												<a href="sugar_create.php" class="btn btn-sm btn-outline-primary">Track Sugar</a>
 											</div>

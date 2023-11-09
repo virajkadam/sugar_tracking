@@ -26,7 +26,7 @@ $localhost_url = "http://$_SERVER[HTTP_HOST]";
 			<div class="layout-page">
 
 				
-			<?php require('../files/nav.html');?>
+			<?php require('../files/nav.php');?>
 
 
 			<div class="content-wrapper">

@@ -1,3 +1,17 @@
+<?php
+session_start();  
+require("config.php");
+
+if ((isset($_SESSION["user_id"]) or isset($_SESSION["doctor_id"])) && isset($_SESSION["name"]) && isset($_SESSION["mobile"])  && isset($_SESSION["role"]) ) {
+
+		$name = ucwords($_SESSION["name"]);
+		$role = ucwords($_SESSION["role"]);
+
+}else{
+	header("Location: login.php?error=Enter correct Data");
+	exit();
+}
+?>
 <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached" id="layout-navbar">
 
 	<div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
@@ -19,8 +33,8 @@
 						<a class="dropdown-item" href="profile.php">
 							<div class="d-flex">
 								<div class="flex-grow-1 text-center">
-									<span class="fw-semibold d-block">John Doe</span>
-									<small class="text-muted">Patient</small>
+									<span class="fw-semibold d-block"><?=$name?></span>
+									<small class="text-muted"><?=$role?></small>
 								</div>
 							</div>
 						</a>

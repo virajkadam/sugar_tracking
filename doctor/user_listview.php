@@ -1,3 +1,13 @@
+<?php 
+
+require "../files/config.php";
+
+$sql = "SELECT * FROM users";
+
+$result = $conn->query($sql);
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +26,7 @@
 
 			<div class="layout-page">
 				
-				<?php require('../files/nav.html');?>
+				<?php require('../files/nav.php');?>
 
 				<div class="content-wrapper">
 
@@ -37,39 +47,49 @@
 										<thead>
 											<tr>
 												<th>Patient Number</th>
-												<th>DateTime</th>
-												<th>Purpose</th>
-												<th>Note</th>
-												<th>Status</th>
+												<th>Name</th>
+												<th>Mobile</th>
+												<th>DOB</th>
+												<th>Gender</th>
+												<th>Diabetes Status</th>
 												<th>Appointment</th>
 												<th>Actions</th>
 											</tr>
 										</thead>
 										<tbody class="table-border-bottom-0">
-											<tr>
-												<td>011</td>
-												<td>06:20 AM <br>1st Nov 2023</td>
-												<td>This is fine value</td>
-												<td>This is fine value</td>
-												<td>Postponed</td>
-												<td>
-													<span class="badge rounded-pill bg-success">Yes</span>
-													<p data-bs-toggle="tooltip" title="Appointment Date">
-														1st Nov 2023
-													</p>
-												</td>
-												<td>
+											<?php
+											if ($result->num_rows > 0) {
+												while ($row = $result->fetch_assoc()) {
+													?>
+													<tr>
+														<td><?=$row['patient_number']; ?></td>
+														<td><?=ucwords($row['name']); ?></td>
+														<td><?=$row['mobile']; ?></td>
+														<td><?=date('jS M Y', $row['dob']); ?></td>
+														<td><?=ucwords($row['gender']); ?></td>
+														<td><?=ucwords($row['diabetes_status']); ?></td>
+														<td>
+															<span class="badge rounded-pill bg-success">Yes</span>
+															<p data-bs-toggle="tooltip" title="Appointment Date">
+																1st Nov 2023
+															</p>
+														</td>
+														<td>
 
-													<a href="user_view.php" class="btn btn-icon btn-sm btn-info me-2" data-bs-toggle="tooltip" title="View Details">
-														<i class="bx bx-detail"></i>
-													</a>
+															<a href="user_view.php" class="btn btn-icon btn-sm btn-info me-2" data-bs-toggle="tooltip" title="View Details">
+																<i class="bx bx-detail"></i>
+															</a>
 
-													<a href="" class="btn btn-icon btn-sm btn-warning me-2" data-bs-toggle="tooltip" title="View Details">
-														<i class="bx bx-trash"></i>
-													</a>
+															<a href="" class="btn btn-icon btn-sm btn-warning me-2" data-bs-toggle="tooltip" title="View Details">
+																<i class="bx bx-trash"></i>
+															</a>
 
-												</td>
-											</tr>
+														</td>
+													</tr>
+													<?php
+												}
+											}
+											?> 
 										</tbody>
 									</table>
 								</div>

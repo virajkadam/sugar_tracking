@@ -1,3 +1,35 @@
+<?php 
+session_start(); 
+require("files/config.php");
+
+if (isset($_POST['submit'])) {
+
+	function validate($data){
+		return htmlspecialchars(stripslashes(trim($data)));
+	}
+
+	$patient_number = mt_rand(10000,99999);
+	$name = validate($_POST['name']);
+	$mobile = validate($_POST['mobile']);
+	$password = $_POST['password'];
+	$dob = validate($_POST['dob']);
+	$gender = validate($_POST['gender']);
+	$diabetes_status = validate($_POST['diabetes_status']);
+
+	$result = $conn->query("INSERT INTO `users`(`patient_number`, `name`, `mobile`, `password`, `dob`, `gender`, `diabetes_status`) VALUES ('$patient_number', '$name', '$mobile', '$password', '$dob', '$gender', '$diabetes_status')");
+
+	if ($result == TRUE) {
+		header("Location: login.php");
+		exit();
+	}else{
+		// header("Location: login.php?error=Incorect Mobile or Password");
+		// exit();
+		echo "Error:". $sql . "<br>". $conn->error;
+	} 
+
+	$conn->close();
+}
+?>
 <!DOCTYPE html>
 
 <html>
@@ -20,15 +52,12 @@
 					<div class="card-body">
 
 						<div class="app-brand justify-content-center">
-							<a href="index.html" class="app-brand-link gap-2">
+							<a href="#" class="app-brand-link gap-2">
 								<h3 class="fw-bolder">SUGAR TRACKING</h3>
 							</a>
 						</div>
 
-						<h4 class="mb-2 text-center">Adventure starts here 🚀</h4>
-						<p class="mb-4 text-center">Track your sugar</p>
-
-						<form id="formAuthentication" class="mb-3" action="index.html" method="POST">
+						<form id="formAuthentication" class="mb-3" action="signup.php" method="POST">
 
 							<div class="mb-3">
 								<label for="name" class="form-label">Name</label>
@@ -40,13 +69,13 @@
 								<label class="form-label" for="basic-icon-default-date">Date Of Birth</label>
 								<div class="input-group input-group-merge">
 									<span id="basic-icon-default-date2" class="input-group-text"><i class="bx bx-calendar"></i></span>
-									<input type="date" class="form-control" id="basic-icon-default-date" aria-label="Select Date" aria-describedby="basic-icon-default-date2" />
+									<input type="date" name="dob" class="form-control" id="basic-icon-default-date" aria-label="Select Date" aria-describedby="basic-icon-default-date2" />
 								</div>
 							</div>
 
 							<div class="mb-3">
-								<label class="form-label" for="gender">Gender</label>
-								<select class="form-select" id="gender" aria-label="Gender">
+								<label class="form-label">Gender</label>
+								<select class="form-select" name="gender">
 									<option value="male">Male</option>
 									<option value="female">Female</option>
 									<option value="other">Other</option>
@@ -54,16 +83,11 @@
 							</div>
 
 							<div class="mb-3">
-								<label class="form-label" for="diabetesStatus">Currently Diabetic?</label>
-								<select class="form-select" id="diabetesStatus" aria-label="Diabetes Status">
+								<label class="form-label">Currently Diabetic?</label>
+								<select class="form-select" name="diabetes_status">
 									<option value="yes">Yes</option>
 									<option value="no">No</option>
 								</select>
-							</div>
-
-							<div class="mb-3">
-								<label for="email" class="form-label">Email</label>
-								<input type="text" class="form-control" id="email" name="email" placeholder="Enter Email">
 							</div>
 
 							<div class="mb-3">
@@ -80,13 +104,13 @@
 							</div>
 
 
-							<button class="btn btn-primary d-grid w-100">Signup</button>
+							<button type="submit" name="submit" class="btn btn-primary d-grid w-100">Signup</button>
 						</form>
 
 						<p class="text-center">
 							<span>Already have an account?</span>
 							<a href="login.php">
-								<span>Sign in instead</span>
+								<span>Login instead</span>
 							</a>
 						</p>
 					</div>
