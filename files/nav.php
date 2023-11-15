@@ -1,17 +1,17 @@
 <?php
-session_start();  
 require("config.php");
 
-if ((isset($_SESSION["user_id"]) or isset($_SESSION["doctor_id"])) && isset($_SESSION["name"]) && isset($_SESSION["mobile"])  && isset($_SESSION["role"]) ) {
+if ((isset($_SESSION["user_id"])) && isset($_SESSION["name"]) && isset($_SESSION["mobile"])  && isset($_SESSION["role"]) ) {
 
-		$name = ucwords($_SESSION["name"]);
-		$role = ucwords($_SESSION["role"]);
+	$name = ucwords($_SESSION["name"]);
+	$role = ucwords($_SESSION["role"]);
 
 }else{
 	header("Location: login.php?error=Enter correct Data");
 	exit();
 }
 ?>
+
 <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached" id="layout-navbar">
 
 	<div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
@@ -30,7 +30,7 @@ if ((isset($_SESSION["user_id"]) or isset($_SESSION["doctor_id"])) && isset($_SE
 				</a>
 				<ul class="dropdown-menu dropdown-menu-end">
 					<li>
-						<a class="dropdown-item" href="profile.php">
+						<a class="dropdown-item" href="<?php if(strtolower($role) == 'patient'){echo "profile.php";}?>">
 							<div class="d-flex">
 								<div class="flex-grow-1 text-center">
 									<span class="fw-semibold d-block"><?=$name?></span>
@@ -39,7 +39,6 @@ if ((isset($_SESSION["user_id"]) or isset($_SESSION["doctor_id"])) && isset($_SE
 							</div>
 						</a>
 					</li>
-
 					<li>
 						<div class="dropdown-divider"></div>
 					</li>

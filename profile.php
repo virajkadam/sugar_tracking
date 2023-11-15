@@ -1,4 +1,7 @@
-
+<?php 
+session_start();
+require("files/config.php");
+?>
 
 <!DOCTYPE html>
 <html>

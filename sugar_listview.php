@@ -1,3 +1,11 @@
+<?php 
+session_start(); 
+require("files/config.php");
+
+$user_id = $_SESSION['user_id'];
+
+$result = $conn->query("SELECT * FROM sugar WHERE user_id = '$user_id' ");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +17,6 @@
 </head>
 
 <body>
-
 
 	<div class="layout-wrapper layout-content-navbar">
 		<div class="layout-container">
@@ -52,20 +59,28 @@
 											</tr>
 										</thead>
 										<tbody class="table-border-bottom-0">
-											<tr>
-												<td>011</td>
-												<td>Fasting</td>
-												<td>200</td>
-												<td>80 Kg</td>
-												<td>06:20 AM <br>1st Nov 2023</td>
-												<td>Machine</td>
-												<td>This is fine value</td>
-												<td>
-													<a href="" class="btn btn-xs btn-danger">
-														<i class="bx bx-trash bx-sm"></i>
-													</a>
-												</td>
-											</tr>
+											<?php
+											if ($result->num_rows > 0) {
+												while ($row = $result->fetch_assoc()) {
+													?>
+													<tr>
+														<td><?=$row['user_id']; ?></td>
+														<td><?=$row['meal_period']; ?></td>
+														<td><?=$row['sugar_level']; ?></td>
+														<td><?=$row['current_weight']; ?></td>
+														<td><?=$row['check_time']; ?><br><?=$row['track_date'];?></td>
+														<td><?=$row['source']; ?></td>
+														<td><?=$row['note']; ?></td>
+														<td>
+															<a href="" class="btn btn-icon btn-sm btn-danger me-2" data-bs-toggle="tooltip" title="View Details">
+																<i class="bx bx-trash"></i>
+															</a>
+														</td>
+													</tr>
+													<?php
+												}
+											}
+											?> 
 										</tbody>
 									</table>
 								</div>

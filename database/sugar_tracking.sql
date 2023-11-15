@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 10, 2023 at 12:23 AM
+-- Generation Time: Nov 16, 2023 at 12:17 AM
 -- Server version: 8.0.35-0ubuntu0.22.04.1
 -- PHP Version: 8.1.2-1ubuntu2.14
 
@@ -101,10 +101,17 @@ CREATE TABLE `sugar` (
   `check_time` varchar(30) NOT NULL,
   `sugar_level` varchar(30) NOT NULL,
   `current_weight` varchar(30) NOT NULL,
-  `datetime` varchar(30) NOT NULL,
+  `track_date` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `source` enum('machine','lab') NOT NULL,
   `note` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `sugar`
+--
+
+INSERT INTO `sugar` (`id`, `user_id`, `meal_period`, `check_time`, `sugar_level`, `current_weight`, `track_date`, `source`, `note`) VALUES
+(1, 1, 'fasting', '23:13', '22', '233', '0132-02-23', 'machine', '32132');
 
 -- --------------------------------------------------------
 
@@ -204,7 +211,7 @@ ALTER TABLE `medication`
 -- AUTO_INCREMENT for table `sugar`
 --
 ALTER TABLE `sugar`
-  MODIFY `id` smallint UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` smallint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`

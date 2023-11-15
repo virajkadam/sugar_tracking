@@ -1,8 +1,12 @@
-<?php
-$localhost_url = "http://$_SERVER[HTTP_HOST]";
+<?php 
+session_start();
+require("../files/config.php");
 
+if ( $_SESSION["role"] != 'doctor' ) {
+	header("Location: login.php");
+	exit();
+}
 ?>
-
 <!DOCTYPE html>
 
 <html>

@@ -1,3 +1,13 @@
+<?php 
+session_start();
+require("files/config.php");
+
+if ( $_SESSION["role"] != 'patient' ) {
+	header("Location: login.php");
+	exit();
+}
+
+?>
 <!DOCTYPE html>
 
 <html>

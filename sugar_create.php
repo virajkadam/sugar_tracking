@@ -1,3 +1,34 @@
+<?php 
+session_start(); 
+require("files/config.php");
+
+if (isset($_POST['submit'])) {
+
+	function validate($data){
+		return htmlspecialchars(stripslashes(trim($data)));
+	}
+
+	$user_id = $_SESSION['user_id'];
+	$meal_period = validate($_POST['meal_period']);
+	$check_time = validate($_POST['check_time']);
+	$sugar_level = validate($_POST['sugar_level']);
+	$current_weight = validate($_POST['current_weight']);
+	$track_date = validate($_POST['track_date']);
+	$track_source = validate($_POST['track_source']);
+	$track_note = validate($_POST['track_note']);
+
+	$result = $conn->query("INSERT INTO `sugar`(`user_id`, `meal_period`, `check_time`, `sugar_level`, `current_weight`, `datetime`, `source`, `note`) VALUES ('$user_id','$meal_period','$check_time','$sugar_level','$current_weight','$track_date','$track_source','$track_note') ");
+
+	if ($result == TRUE) {
+		header("Location: sugar_listview.php");
+		exit();
+	}else{
+		echo "Error:". $sql . "<br>". $conn->error;
+	} 
+
+	$conn->close();
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +66,7 @@
 
 							<div class="card-body">
 
-								<form>
+								<form class="mb-3" method="POST" action="sugar_create.php">
 
 									<div class="row">
 
@@ -76,7 +107,7 @@
 											<label class="form-label" for="weight">Current Weight:</label>
 											<div class="input-group input-group-merge">
 												<span id="weight-icon" class="input-group-text"><i class="bx bx-calculator"></i></span>
-												<input type="number" class="form-control" id="weight" placeholder="Enter Weight">
+												<input type="number" class="form-control" name="current_weight" placeholder="Enter Weight">
 											</div>
 											<small class="text-muted">Weight in KG</small>
 										</div>
@@ -116,9 +147,7 @@
 												<i class="bx bxs-left-arrow-circle"></i> Back
 											</a>
 
-											<button type="submit" class="btn btn-success">
-												<i class='bx bxs-paper-plane'></i>	Save Data
-											</button>
+											<input type="submit" name="submit" class="btn btn-success" value="Save Data">
 										</div>
 
 									</div>

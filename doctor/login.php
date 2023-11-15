@@ -36,7 +36,7 @@ if (isset($_POST['mobile']) && isset($_POST['password'])) {
 				$_SESSION['mobile'] = $row['mobile'];
 				$_SESSION['name'] = $row['name'];
 				$_SESSION['role'] = 'doctor';
-				$_SESSION['doctor_id'] = $row['user_id'];
+				$_SESSION['user_id'] = $row['doctor_id'];
 
 				header("Location: home.php");
 				exit();

@@ -1,6 +1,6 @@
 <?php 
-
-require "../files/config.php";
+session_start(); 
+require("../files/config.php");
 
 $sql = "SELECT * FROM users";
 
@@ -75,7 +75,6 @@ $result = $conn->query($sql);
 															</p>
 														</td>
 														<td>
-
 															<a href="user_view.php" class="btn btn-icon btn-sm btn-info me-2" data-bs-toggle="tooltip" title="View Details">
 																<i class="bx bx-detail"></i>
 															</a>
@@ -83,7 +82,6 @@ $result = $conn->query($sql);
 															<a href="" class="btn btn-icon btn-sm btn-warning me-2" data-bs-toggle="tooltip" title="View Details">
 																<i class="bx bx-trash"></i>
 															</a>
-
 														</td>
 													</tr>
 													<?php
