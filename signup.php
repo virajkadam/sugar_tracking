@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
 		return htmlspecialchars(stripslashes(trim($data)));
 	}
 
-	$patient_number = mt_rand(10000,99999);
+	$patient_number = mt_rand(999,99999);
 	$name = validate($_POST['name']);
 	$mobile = validate($_POST['mobile']);
 	$password = $_POST['password'];
@@ -22,8 +22,6 @@ if (isset($_POST['submit'])) {
 		header("Location: login.php");
 		exit();
 	}else{
-		// header("Location: login.php?error=Incorect Mobile or Password");
-		// exit();
 		echo "Error:". $sql . "<br>". $conn->error;
 	} 
 

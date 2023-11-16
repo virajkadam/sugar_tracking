@@ -13,4 +13,11 @@ if ($conn->connect_error) {
 
 $localhost_url = "http://$_SERVER[HTTP_HOST]";
 
+$sugar_meal_period = [
+	"fasting" => "Fasting",
+	"before_meal" => "Before Meal",
+	"after_meal" => "After Meal",
+	"bedtime" => "Bedtime",
+];
+
 ?>

@@ -35,7 +35,7 @@ require("files/config.php");
 									<i class="bx bxs-left-arrow-circle"></i> Back
 								</a>
 
-								<h5 class="mb-0 text-primary text-center">Profile</h5>
+								<h5 class="mb-0 text-primary text-center fw-bold">Profile</h5>
 							</div>
 
 							<div class="card-body">
@@ -54,17 +54,12 @@ require("files/config.php");
 											<input class="form-control" type="text" name="mobile" value="8806431723">
 										</div>
 
-										<div class="col-lg-3 col-md-3 mb-3">
-											<label class="form-label">Password</label>
-											<input class="form-control" type="password" name="password" value="1234">
-										</div>
-
-										<div class="col-lg-3 col-md-3 mb-3">
+										<div class="col-lg-2 col-md-2 mb-3">
 											<label class="form-label">DOB</label>
 											<input class="form-control" type="text" name="dob" value="3 Jul 1992">
 										</div>
 
-										<div class="col-lg-3 col-md-3 mb-3">
+										<div class="col-lg-2 col-md-2 mb-3">
 											<label class="form-label">Gender</label>
 											<select class="form-select" name="gender">
 												<option value="Male">Male</option>
@@ -73,7 +68,7 @@ require("files/config.php");
 											</select>
 										</div>
 
-										<div class="col-lg-3 col-md-3 mb-3">
+										<div class="col-lg-2 col-md-2 mb-3">
 											<label class="form-label">Diabetes Status</label>
 											<select class="form-select" name="check-meal-type">
 												<option value="fully_diabetic">Fully Diabetic</option>

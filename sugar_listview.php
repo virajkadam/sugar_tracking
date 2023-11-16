@@ -48,7 +48,6 @@ $result = $conn->query("SELECT * FROM sugar WHERE user_id = '$user_id' ");
 									<table class="table text-center data_table">
 										<thead>
 											<tr>
-												<th>Patient Number</th>
 												<th>Meal Period</th>
 												<th>Sugar Level</th>
 												<th>Current Weight</th>
@@ -64,15 +63,14 @@ $result = $conn->query("SELECT * FROM sugar WHERE user_id = '$user_id' ");
 												while ($row = $result->fetch_assoc()) {
 													?>
 													<tr>
-														<td><?=$row['user_id']; ?></td>
-														<td><?=$row['meal_period']; ?></td>
-														<td><?=$row['sugar_level']; ?></td>
-														<td><?=$row['current_weight']; ?></td>
-														<td><?=$row['check_time']; ?><br><?=$row['track_date'];?></td>
-														<td><?=$row['source']; ?></td>
-														<td><?=$row['note']; ?></td>
+														<td><?=$sugar_meal_period[$row['meal_period']]?></td>
+														<td><?=$row['sugar_level']?> mg/dL</td>
+														<td><?=$row['current_weight']?> Kg</td>
+														<td><?=$row['check_time']?><br><?=$row['track_date']?></td>
+														<td><?=$row['source']?></td>
+														<td><?=$row['note']?></td>
 														<td>
-															<a href="" class="btn btn-icon btn-sm btn-danger me-2" data-bs-toggle="tooltip" title="View Details">
+															<a href="" class="btn btn-icon btn-sm btn-danger me-2" data-bs-toggle="tooltip" title="Remove Record">
 																<i class="bx bx-trash"></i>
 															</a>
 														</td>

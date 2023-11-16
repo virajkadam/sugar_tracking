@@ -5,6 +5,11 @@ if ((isset($_SESSION["user_id"])) && isset($_SESSION["name"]) && isset($_SESSION
 
 	$name = ucwords($_SESSION["name"]);
 	$role = ucwords($_SESSION["role"]);
+	if (strtolower($role) == 'patient') {
+		$patient_number = $_SESSION['patient_number'];
+	}else{
+		$patient_number = '';
+	}
 
 }else{
 	header("Location: login.php?error=Enter correct Data");
@@ -35,6 +40,7 @@ if ((isset($_SESSION["user_id"])) && isset($_SESSION["name"]) && isset($_SESSION
 								<div class="flex-grow-1 text-center">
 									<span class="fw-semibold d-block"><?=$name?></span>
 									<small class="text-muted"><?=$role?></small>
+									<p class="fw-semibold mb-0 mt-2"><?=$patient_number?></p>
 								</div>
 							</div>
 						</a>

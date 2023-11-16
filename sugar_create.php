@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
 	$track_source = validate($_POST['track_source']);
 	$track_note = validate($_POST['track_note']);
 
-	$result = $conn->query("INSERT INTO `sugar`(`user_id`, `meal_period`, `check_time`, `sugar_level`, `current_weight`, `datetime`, `source`, `note`) VALUES ('$user_id','$meal_period','$check_time','$sugar_level','$current_weight','$track_date','$track_source','$track_note') ");
+	$result = $conn->query("INSERT INTO `sugar`(`user_id`, `meal_period`, `check_time`, `sugar_level`, `current_weight`, `track_date`, `source`, `note`) VALUES ('$user_id','$meal_period','$check_time','$sugar_level','$current_weight','$track_date','$track_source','$track_note') ");
 
 	if ($result == TRUE) {
 		header("Location: sugar_listview.php");
@@ -77,10 +77,9 @@ if (isset($_POST['submit'])) {
 													<i class="bx bx-time"></i>
 												</span>
 												<select class="form-select" name="meal_period">
-													<option value="fasting">Fasting</option>
-													<option value="before_meal">Before Meal</option>
-													<option value="after_meal">After Meal</option>
-													<option value="bedtime">Bedtime</option>
+													<?php foreach ($sugar_meal_period as $key => $val) {?>
+													<option value="<?=$key?>"><?=$val?></option>
+													<?php } ?>
 												</select>
 											</div>
 										</div>
